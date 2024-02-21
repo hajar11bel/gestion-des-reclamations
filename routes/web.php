@@ -22,6 +22,15 @@ Route::get('/logiin', function () {
 Route::get('/dashuser', function () {
     return view('user.dashuser');
 });
+Route::get('/reclamation', function () {
+    return view('user.reclamation');
+});
+Route::get('/suivreReclamation', function () {
+    return view('user.suivreReclamation');
+});
+Route::get('/historique', function () {
+    return view('user.historique');
+});
 
 
 Auth::routes();

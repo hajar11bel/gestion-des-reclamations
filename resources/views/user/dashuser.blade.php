@@ -73,13 +73,13 @@
     <div class="container">
         <div class="row">
             <div class="card red">
-                <a href="/resources/views/user/reclamation.blade.php">Réclamer</a>
+                <a href="/reclamation">Réclamer</a>
             </div>
             <div class="card green">
-                <a href="/resources/views/user/suivreReclamation.blade.php">Suivre Réclamation</a>
+                <a href="/suivreReclamation">Suivre Réclamation</a>
             </div>
             <div class="card blue">
-                <a href="/resources/views/user/historique.blade.php">Historique des Réclamations</a>
+                <a href="/historique">Historique des Réclamations</a>
             </div>
         </div>
     </div>
