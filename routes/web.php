@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/logiin', function () {
     return view('user.login');
 });
+Route::get('/dashuser', function () {
+    return view('user.dashuser');
+});
 
 
 Auth::routes();
