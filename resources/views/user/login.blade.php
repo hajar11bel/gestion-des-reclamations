@@ -26,7 +26,7 @@
                         @csrf
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your email"
+                                    <input type="email"  class="form-control" name="email" placeholder="Your email"
                                         required>
                                     <label for="email">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -42,7 +42,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="password"
+                                    <input type="password" class="form-control" name="password"
                                         placeholder="Your password" required>
                                     <label for="password">
 
