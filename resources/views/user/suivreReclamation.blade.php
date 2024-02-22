@@ -83,7 +83,7 @@
         <h2>Suivre les Réclamations</h2>
         <ul>
             <li>
-                <span class="reclamation">Réclamation :</span> <?php echo $titre_reclamation; ?> - État : <span class="etat">En cours de traitement</span>
+                <span class="reclamation">Réclamation :</span>  - État : <span class="etat">En cours de traitement</span>
             </li>
             <!-- Autres réclamations -->
         </ul>

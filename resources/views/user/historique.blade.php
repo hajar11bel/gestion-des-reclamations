@@ -80,7 +80,7 @@
         <h2>Historique des Réclamations</h2>
         <ul>
             <li>
-                <span class="reclamation">Réclamation </span><?php echo $titre_reclamation; ?> - Date de réclamation : <span class="dates">01/01/2024</span>, Date de réparation : <span class="dates">05/01/2024</span>
+                <span class="reclamation">Réclamation </span>- Date de réclamation : <span class="dates">01/01/2024</span>, Date de réparation : <span class="dates">05/01/2024</span>
             </li>
             <li>
                 <span class="reclamation">Réclamation </span> - Date de réclamation : <span class="dates">10/01/2024</span>, Date de réparation : <span class="dates">15/01/2024</span>
