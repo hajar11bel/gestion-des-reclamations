@@ -86,7 +86,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="dashuser.html" class="accueil">Accueil</a> <!-- Lien vers la page principale -->
+        <a href="/dashuser" class="accueil">Accueil</a> <!-- Lien vers la page principale -->
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <a href="#" class="logout">Déconnexion</a>
     </div>
