@@ -17,4 +17,5 @@ class Reclamation extends Model
         'user_id'
         
     ];
+    
 }

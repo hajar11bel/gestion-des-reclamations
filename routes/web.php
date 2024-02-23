@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReclamationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +23,17 @@ Route::get('/logiin', function () {
 Route::get('/dashuser', function () {
     return view('user.dashuser');
 });
+
 Route::get('/reclamation', function () {
     return view('user.reclamation');
 });
-Route::get('/suivreReclamation', function () {
-    return view('user.suivreReclamation');
-});
+Route::post('ajouterreclamation', [ReclamationController::class, 'ajouterreclamation']);
+Route::get('suivreReclamation', [ReclamationController::class, 'suivreReclamation']);
+
 Route::get('/historique', function () {
     return view('user.historique');
 });
+
 
 
 Auth::routes();

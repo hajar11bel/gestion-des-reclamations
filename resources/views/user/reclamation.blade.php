@@ -78,9 +78,17 @@
         input[type="submit"]:hover {
             background-color: #2980b9;
         }
-        .logout, .accueil{
+        .accueil{
             font-size: medium;
             font-weight: bold;
+            background-color: #333;
+            color: #fff;
+            border: none;
+        }
+        .logout{
+            font-size: medium;
+            font-weight: bold;
+            background-color: #333;
         }
     </style>
 </head>
@@ -88,22 +96,19 @@
     <div class="header">
         <a href="/dashuser" class="accueil">Accueil</a> <!-- Lien vers la page principale -->
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container">
         <h2>Faire une Réclamation</h2>
-        <form action="#" method="POST">
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required>
-            
-            <label for="email">Email :</label>
-            <input type="text" id="email" name="email" required>
-            
-            <label for="telephone">Téléphone :</label>
-            <input type="text" id="telephone" name="telephone" required>
-            
+        <form action="/ajouterreclamation" method="POST">
+           
+            @csrf
+           
+
             <label for="reclamation">Réclamation :</label>
-            <textarea id="reclamation" name="reclamation" required></textarea>
+            <textarea id="reclamation" name="message" required></textarea>
             
             <input type="submit" value="Soumettre">
         </form>

@@ -67,9 +67,9 @@
             font-style: italic;
             color: #888;
         }
-        .logout, .accueil{
-            font-size: medium;
-            font-weight: bold;
+        .logout, 
+            background-color: black;
+            border: none
         }
     </style>
 </head>
@@ -77,7 +77,9 @@
     <div class="header">
         <a href="/dashuser" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container">
         <h2>Suivre les Réclamations</h2>

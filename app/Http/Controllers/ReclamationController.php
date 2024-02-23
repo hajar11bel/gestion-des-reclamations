@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+
 
 use App\Models\Reclamation;
 use Illuminate\Http\Request;
@@ -14,13 +16,27 @@ class ReclamationController extends Controller
     {
         //
     }
-
+    public function suivreReclamation(){
+        $reclamations = Reclamation::where('statu','en attente')->where('user_id',Auth::user()->id)->get();
+        return view('user.suivreReclamation',compact('reclamations'));
+    }
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
+    public function ajouterreclamation(Request $request){
+        
+        $submitedData = $request->validate([
+            'message' => 'required|string',            
+        ]);
+        
+        $submitedData['departement_id'] = Auth::user()->departement_id;
+        $submitedData['user_id'] = Auth::user()->id;
+
+        Reclamation::create($submitedData);
+        return redirect('dashuser')->with('success', 'Votre réclamation a été enregistrée avec succès.');
+
+      
+       
     }
 
     /**
