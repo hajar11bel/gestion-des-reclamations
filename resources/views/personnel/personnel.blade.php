@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suivre les Réclamations - RAK</title>
+    <title>Réclamations Affectées - RAK</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,7 +40,6 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            text-align: center;
         }
         h2 {
             text-align: center;
@@ -50,7 +49,6 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-            text-align: left;
         }
         li {
             margin-bottom: 10px;
@@ -61,46 +59,55 @@
         }
         .reclamation {
             font-weight: bold;
-            color: #333; /* Couleur statique pour le mot "Réclamation" */
         }
         .etat {
             font-style: italic;
             color: #888;
         }
-<<<<<<< HEAD
-        .logout{ 
-        font-size: medium;
+        select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .logout{
+            font-size: medium;
+            font-weight: bold;
             background-color: #333;
-            color: white;
-=======
-        .logout{   
-            background-color: black;
->>>>>>> 6069113ea8a49a2a565cce03c9cc3a4ae8ed92d2
-            border: none;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="/dashuser" class="accueil">Accueil</a>
+        <a href="index.html" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-        <button class="logout">Déconnexion</button>
+        <a href="#" class="logout">Déconnexion</a>
     </div>
     <div class="container">
-        <h2>Suivre les Réclamations</h2>
-
+        <h2>Réclamations Affectées</h2>
         <ul>
-            @foreach ($reclamations as $reclamation)
-                
-            
             <li>
-                <span class="reclamation" value="{{$reclamation->id}}">Réclamation : {{$reclamation->message}}</span>  - État : <span class="etat" >En cours de traitement</span>
-            
-            </li>@endforeach
-            <!-- Autres réclamations -->
-        </ul></form>
+                <span class="reclamation">Réclamation 1</span> - État actuel : <span class="etat">En attente</span>
+                <form action="#" method="POST">
+                    <select name="etat_reclamation">
+                        <option value="en_attente">En attente</option>
+                        <option value="en_traitement">En traitement</option>
+                        <option value="termine">Terminé</option>
+                    </select>
+                    <input type="submit" value="Mettre à jour">
+                </form>
+            </li>
+            <li>
+                <span class="reclamation">Réclamation 2</span> - État actuel : <span class="etat">En traitement</span>
+                <form action="#" method="POST">
+                    <select name="etat_reclamation">
+                        <option value="en_attente">En attente</option>
+                        <option value="en_traitement" selected>En traitement</option>
+                        <option value="termine">Terminé</option>
+                    </select>
+                    <input type="submit" value="Mettre à jour">
+                </form>
+            </li>
+            <!-- Ajoutez d'autres éléments de liste pour représenter les réclamations affectées -->
+        </ul>
     </div>
 </body>
 </html>
