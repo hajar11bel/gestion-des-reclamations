@@ -19,21 +19,23 @@
             justify-content: space-between;
             align-items: center;
         }
+        
         .logo {
             height: 50px;
             width: auto;
+            
         }
-        .logout {
-            color: #ddd; /* Couleur grise pour le lien de déconnexion */
-            text-decoration: none;
-            font-size: 18px; /* Taille de la police */
-            margin-left: auto; /* Pousse le lien de déconnexion vers la droite */
+        
+        .logout{ 
+        font-size: medium;
+            background-color: #333;
+            color: white;
+            border: none;
         }
         .accueil {
-            color: #fff; /* Couleur blanche pour le lien "Accueil" */
+            color: #fff;
             text-decoration: none;
-            font-size: 18px; /* Taille de la police */
-            margin-right: auto; /* Pousse le lien "Accueil" vers la gauche */
+            font-size: 18px;
         }
         .container {
             max-width: 600px;
@@ -87,8 +89,9 @@
         }
         .logout{
             font-size: medium;
-            font-weight: bold;
             background-color: #333;
+            color: white;
+            border: none;
         }
     </style>
 </head>

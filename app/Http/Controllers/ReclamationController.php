@@ -23,6 +23,10 @@ class ReclamationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function historique(){
+        $reclamations =Reclamation::where('statu',"termine")->where('user_id',Auth::user()->id)->get();
+        return view('user.historique',compact('reclamations'));
+    }
     public function ajouterreclamation(Request $request){
         
         $submitedData = $request->validate([

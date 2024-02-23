@@ -67,9 +67,11 @@
             font-style: italic;
             color: #888;
         }
-        .logout, 
-            background-color: black;
-            border: none
+        .logout{ 
+        font-size: medium;
+            background-color: #333;
+            color: white;
+            border: none;
         }
     </style>
 </head>
@@ -79,16 +81,21 @@
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-        <button class="logout">Déconnexion</button></form>
+        <button class="logout">Déconnexion</button>
     </div>
     <div class="container">
         <h2>Suivre les Réclamations</h2>
+
         <ul>
+            @foreach ($reclamations as $reclamation)
+                
+            
             <li>
-                <span class="reclamation">Réclamation :</span>  - État : <span class="etat">En cours de traitement</span>
-            </li>
+                <span class="reclamation" value="{{$reclamation->id}}">Réclamation : {{$reclamation->message}}</span>  - État : <span class="etat" >En cours de traitement</span>
+            
+            </li>@endforeach
             <!-- Autres réclamations -->
-        </ul>
+        </ul></form>
     </div>
 </body>
 </html>

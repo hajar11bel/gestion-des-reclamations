@@ -29,10 +29,9 @@ Route::get('/reclamation', function () {
 });
 Route::post('ajouterreclamation', [ReclamationController::class, 'ajouterreclamation']);
 Route::get('suivreReclamation', [ReclamationController::class, 'suivreReclamation']);
+ 
+Route::get('historique', [ReclamationController::class, 'historique']);
 
-Route::get('/historique', function () {
-    return view('user.historique');
-});
 
 
 

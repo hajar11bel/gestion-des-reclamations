@@ -23,15 +23,18 @@
             height: 50px;
             width: auto;
         }
-        .logout {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 18px;
+        .logout{
+            font-size: medium;
+            background-color: #333;
+            color: white;
+            border: none;
         }
-        .accueil {
+        .accueil{
+            font-size: medium;
+            font-weight: bold;
+            background-color: #333;
             color: #fff;
-            text-decoration: none;
-            font-size: 18px;
+            border: none;
         }
         .container {
             max-width: 800px;
@@ -77,19 +80,19 @@
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-        <button class="logout">Déconnexion</button></form>
+        <button class="logout">Déconnexion</button>
     </div>
     <div class="container">
         <h2>Historique des Réclamations</h2>
         <ul>
+            @foreach ($reclamations as $reclamation)
+           
             <li>
-                <span class="reclamation">Réclamation </span>- Date de réclamation : <span class="dates">01/01/2024</span>, Date de réparation : <span class="dates">05/01/2024</span>
+                <span class="reclamation" value="{{$reclamation->id}}">Réclamation :</span>{{$reclamation->message}} - Date de réclamation :   <span class="dates">{{$reclamation->created_at}}</span>, Date de réparation : <span class="dates">{{$reclamation->date_fin}}</span>
             </li>
-            <li>
-                <span class="reclamation">Réclamation </span> - Date de réclamation : <span class="dates">10/01/2024</span>, Date de réparation : <span class="dates">15/01/2024</span>
-            </li>
+            @endforeach
             <!-- Ajoutez d'autres éléments de liste pour représenter l'historique -->
-        </ul>
+        </ul></form>
     </div>
 </body>
 </html>

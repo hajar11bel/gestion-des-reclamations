@@ -64,7 +64,9 @@
         }
         .logout{
             font-size: medium;
-            background-color: black;
+            background-color: #333;
+            color: white;
+            border: none;
         }
         .alert{
             color:white;
