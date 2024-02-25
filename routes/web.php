@@ -17,6 +17,7 @@ use App\Http\Controllers\ReclamationController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/logiin', function () {
     return view('user.login');
 });
