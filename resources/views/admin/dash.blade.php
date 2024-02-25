@@ -77,30 +77,32 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+        <a href="/dash" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container">
         <div class="card">
             <h2>Gestion des Utilisateurs</h2>
             <div class="card-content">
                 <p>Gérer les utilisateurs de l'application.</p>
-                <a href="gestion_utilisateurs.html" class="card-link" id="btn1">Accéder</a>
+                <a href="/gesUsers" class="card-link" id="btn1">Accéder</a>
             </div>
         </div>
         <div class="card">
             <h2>Gestion du Personnel</h2>
             <div class="card-content">
                 <p>Gérer le personnel de l'entreprise.</p>
-                <a href="gestion_personnel.html" class="card-link" id="btn2">Accéder</a>
+                <a href="/gesPerso" class="card-link" id="btn2">Accéder</a>
             </div>
         </div>
         <div class="card">
             <h2>Gestion des Réclamations</h2>
             <div class="card-content">
                 <p>Gérer les réclamations des utilisateurs.</p>
-                <a href="gestion_reclamations.html" class="card-link" id="btn3">Accéder</a>
+                <a href="/gesRecla" class="card-link" id="btn3">Accéder</a>
             </div>
         </div>
     </div>

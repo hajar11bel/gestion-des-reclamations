@@ -60,9 +60,11 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+        <a href="/dash" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container mt-5">
         <h1 class="mb-4">Gestion du Personnel</h1>

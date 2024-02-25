@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -14,6 +17,25 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function login(Request $request){
+        if(Auth::guard("admin")->user()->attempt(['email' => $request->email,'password' => $request->password])){
+            return view('admin.dash');
+        }
+            return redirect()->back()->withInput(['email' => $request->email]);
+    }
+  
+    
+    public function gesUsers(){
+        $users =  User::all();
+        return view('admin.gesUsers', compact('users'));
+    }
+    public function delet($id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->back(); 
+    }
+  
 
     /**
      * Show the form for creating a new resource.
