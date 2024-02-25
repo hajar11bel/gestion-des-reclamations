@@ -64,6 +64,8 @@ Route::delete('/delete/{id}', [ReclamationController::class, 'delete']);
 Route::get('personnel', [PersonnelController::class, 'personnel']);
 Route::post('/store', [PersonnelController::class, 'store']);
 
+Route::post('/update/{id}', [ReclamationController::class, 'update'])->name('update.reclamation');
+
 
 
 Auth::routes();

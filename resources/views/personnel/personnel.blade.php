@@ -81,28 +81,26 @@
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-        <button class="logout">Déconnexion</button></form>
+            <button class="logout">Déconnexion</button>
+        </form>
     </div>
     <div class="container">
         <h2>Réclamations Affectées</h2>
         <ul>
-            <li> @foreach($reclamations as $reclamation)
+            @foreach($reclamations as $reclamation)
+            <li>
                 <span class="reclamation">{{$reclamation->message}}</span> - État actuel : <span class="etat">{{$reclamation->statu}}</span>
-                <form action="/store" method="POST">
-                    <select name="statu" value='{{$reclamation->statu}}'>
-                        
-
-
-                        <option value="en_attente">En attente</option>
-                        <option value="en_traitement">En traitement</option>
-                        <option value="termine">Terminé</option>
+                <form action="/update/{{$reclamation->id}}" method="POST">
+                    @csrf
+                    <select name="statu">
+                        <option value="en attente" {{$reclamation->statu == 'en attente' ? 'selected' : ''}}>En attente</option>
+                        <option value="en traitement" {{$reclamation->statu == 'en traitement' ? 'selected' : ''}}>En traitement</option>
+                        <option value="termine" {{$reclamation->statu == 'termine' ? 'selected' : ''}}>Terminé</option>
                     </select>
                     <input type="submit" value="Mettre à jour">
-                </form>@endforeach
+                </form>
             </li>
-            
-            
-            <!-- Ajoutez d'autres éléments de liste pour représenter les réclamations affectées -->
+            @endforeach
         </ul>
     </div>
 </body>

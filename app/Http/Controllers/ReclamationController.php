@@ -79,9 +79,12 @@ class ReclamationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Reclamation $reclamation)
+    public function update(Request $request, $id)
     {
-        //
+        $reclamation = Reclamation::findOrFail($id);
+        $reclamation->statu = $request->input('statu');
+        $reclamation->save();
+        return redirect()->back()->with('success', 'Statut de réclamation mis à jour avec succès.');
     }
 
     /**
