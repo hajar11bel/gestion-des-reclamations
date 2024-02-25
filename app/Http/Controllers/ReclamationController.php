@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -37,10 +38,18 @@ class ReclamationController extends Controller
         $submitedData['user_id'] = Auth::user()->id;
 
         Reclamation::create($submitedData);
-        return redirect('dashuser')->with('success', 'Votre réclamation a été enregistrée avec succès.');
-
-      
-       
+        return redirect('dashuser')->with('success', 'Votre réclamation a été enregistrée avec succès.');  
+    }
+    public function gesRecla(){
+        
+        $reclamations =  Reclamation::all();
+        return view('admin.gesRecla', compact('reclamations'));
+    }
+    public function delete($id){
+        $reclamation = Reclamation::find($id);
+        $reclamation->delete();
+        
+        return redirect()->back(); 
     }
 
     /**

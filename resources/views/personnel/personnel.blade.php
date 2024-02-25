@@ -79,33 +79,29 @@
     <div class="header">
         <a href="index.html" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container">
         <h2>Réclamations Affectées</h2>
         <ul>
-            <li>
-                <span class="reclamation">Réclamation 1</span> - État actuel : <span class="etat">En attente</span>
-                <form action="#" method="POST">
-                    <select name="etat_reclamation">
+            <li> @foreach($reclamations as $reclamation)
+                <span class="reclamation">{{$reclamation->message}}</span> - État actuel : <span class="etat">{{$reclamation->statu}}</span>
+                <form action="/store" method="POST">
+                    <select name="statu" value='{{$reclamation->statu}}'>
+                        
+
+
                         <option value="en_attente">En attente</option>
                         <option value="en_traitement">En traitement</option>
                         <option value="termine">Terminé</option>
                     </select>
                     <input type="submit" value="Mettre à jour">
-                </form>
+                </form>@endforeach
             </li>
-            <li>
-                <span class="reclamation">Réclamation 2</span> - État actuel : <span class="etat">En traitement</span>
-                <form action="#" method="POST">
-                    <select name="etat_reclamation">
-                        <option value="en_attente">En attente</option>
-                        <option value="en_traitement" selected>En traitement</option>
-                        <option value="termine">Terminé</option>
-                    </select>
-                    <input type="submit" value="Mettre à jour">
-                </form>
-            </li>
+            
+            
             <!-- Ajoutez d'autres éléments de liste pour représenter les réclamations affectées -->
         </ul>
     </div>

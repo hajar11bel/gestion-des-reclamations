@@ -67,9 +67,11 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+        <a href="/dash" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container mt-5">
         <h1 class="mb-4">Gestion des Utilisateurs</h1>
@@ -84,26 +86,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($users as $item )
                     <tr>
-                        <td>John Doe</td>
-                        <td>1234567890</td>
-                        <td>Informatique</td>
+                        
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->cin}}</td>
+                        <td>{{$item->departement_id}}</td>
                         <td>
                             <a href="#" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
                             <a href="#" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
-                            <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Supprimer</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jane Doe</td>
-                        <td>0987654321</td>
-                        <td>Ressources Humaines</td>
-                        <td>
-                            <a href="#" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
-                            <a href="#" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
-                            <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Supprimer</a>
-                        </td>
-                    </tr>
+                            <form action="/delet/{{$item->id}} " method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                              </form>
+                        </td> 
+                    </tr>@endforeach
+                   
                     <!-- Ajoutez ici d'autres lignes pour plus d'utilisateurs -->
                 </tbody>
             </table>

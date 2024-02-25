@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PersonnelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReclamationController;
 
@@ -32,6 +34,34 @@ Route::get('suivreReclamation', [ReclamationController::class, 'suivreReclamatio
  
 Route::get('historique', [ReclamationController::class, 'historique']);
 
+Route::get('/logiin', function () {
+    return view('admin.login');
+    } );
+Route::get('/dash', function () {
+    return view('admin.dash');
+});
+
+
+Route::get('/gesUsers', [AdminController::class, 'gesUsers'])->name('users.gesUsers');
+
+Route::get('/gesPerso', function () {
+    return view('admin.gesPerso');
+});
+Route::get('/gesRecla', function () {
+    return view('admin.gesRecla');
+});
+
+Route::delete('/delet/{id}', [AdminController::class, 'delet']);
+
+Route::get('/login-perso', function () {
+    return view('personnel.login-perso');
+    });
+    
+Route::get('gesRecla', [ReclamationController::class, 'gesRecla']);
+Route::delete('/delete/{id}', [ReclamationController::class, 'delete']);
+
+Route::get('personnel', [PersonnelController::class, 'personnel']);
+Route::post('/store', [PersonnelController::class, 'store']);
 
 
 

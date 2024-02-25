@@ -64,9 +64,11 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+        <a href="/dash" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout">Déconnexion</button></form>
     </div>
     <div class="container mt-5">
         <h1 class="mb-4">Gestion des Réclamations</h1>
@@ -76,15 +78,17 @@
                     <thead>
                         <tr>
                             <th scope="col">Réclamation</th>
-                            <th scope="col">Utilisateur</th>
+                            <th scope="col">Id de Utilisateur</th>
                             <th scope="col">Affecter à</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Problème de connexion</td>
-                            <td>John Doe</td>
+                       @foreach($reclamations as $item)
+                        <tr> 
+                            <td>{{$item->message}}</td>
+
+                            <td>{{$item->id}}</td>
                             <td>
                                 <select class="form-select select-personnel">
                                     <option value="" selected disabled>Sélectionner</option>
@@ -95,25 +99,15 @@
                             </td>
                             <td>
                                
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                                <form action="/delete/{{$item->id}} " method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                  </form>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Panne d'électricité</td>
-                            <td>Jane Doe</td>
-                            <td>
-                                <select class="form-select select-personnel">
-                                    <option value="" selected disabled>Sélectionner</option>
-                                    <option value="personnel1">Personnel 1</option>
-                                    <option value="personnel2">Personnel 2</option>
-                                    <!-- Ajoutez ici d'autres options pour plus de personnels -->
-                                </select>
-                            </td>
-                            <td>
-                                
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Supprimer</a>
-                            </td>
-                        </tr>
+                        @endforeach
+                        
                         <!-- Ajoutez ici d'autres lignes pour plus de réclamations -->
                     </tbody>
                 </table>
