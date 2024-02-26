@@ -30,6 +30,14 @@ Route::get('/dashuser', function () {
 Route::get('/reclamation', function () {
     return view('user.reclamation');
 });
+
+Route::get('/addUser', function () {
+    return view('admin.ajouterUser');
+});
+
+Route::get('/user/dashuser', function () {
+    return view('user.dashuser');
+});
 Route::post('ajouterreclamation', [ReclamationController::class, 'ajouterreclamation']);
 Route::get('suivreReclamation', [ReclamationController::class, 'suivreReclamation']);
  
@@ -41,7 +49,9 @@ Route::get('/logiin', function () {
 Route::get('/dash', function () {
     return view('admin.dash');
 });
-
+Route::get('/addPersonnel', function () {
+    return view('admin.ajouterPerso');
+});
 
 Route::get('/gesUsers', [AdminController::class, 'gesUsers'])->name('users.gesUsers');
 
@@ -70,4 +80,3 @@ Route::post('/update/{id}', [ReclamationController::class, 'update'])->name('upd
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

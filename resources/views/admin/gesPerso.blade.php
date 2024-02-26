@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-qGi72ej8oR6L/ax8HtWVHYtk4Jxx6Sqz2OOPLIQsObCPwEnkF+4dEdOnsDS+JM0D" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,13 +40,17 @@
             font-size: 18px;
         }
         .container {
-            padding: 50px;
+            padding: 30px;
+            width: fit-content;
+            height: max-content;
         }
         .table {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             padding: 30px;
+            width: 1000px;
+            
         }
         .table th,
         .table td {
@@ -64,14 +70,21 @@
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-        <button class="logout">Déconnexion</button></form>
+        <button class="logout" style="background-color: #333;border:none">Déconnexion</button></form>
     </div>
-    <div class="container mt-5">
-        <h1 class="mb-4">Gestion du Personnel</h1>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <table class="table table-bordered table-hover">
+    <div class="container mt-5 bg-white">
+        <h1 class="">Gestion des Personnels</h1>
+        <div class="row justify-content-end">
+            
+        <a href="/addPersonnel" class="col-3"><button class="btn btn-secondary btn-md ml-3  " >Nouveau personnel   <i class="fas fa-add"></i> </button></a><br>
+        </div>
+        <div class="row  mt-5 ">
+            <div class="col-lg-8 ">
+
+                <table class="table table-bordered table-hover mx-auto">
+
                     <thead>
+                        
                         <tr>
                             <th scope="col">Nom</th>
                             <th scope="col">CIN</th>
