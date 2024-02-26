@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Personnel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -19,7 +20,8 @@ class AdminController extends Controller
     }
 
     public function login(Request $request){
-        if(Auth::guard("admin")->user()->attempt(['email' => $request->email,'password' => $request->password])){
+   
+        if(Auth::guard("admin")->attempt($request->only('email','password'))){
             return view('admin.dash');
         }
             return redirect()->back()->withInput(['email' => $request->email]);
@@ -32,8 +34,14 @@ class AdminController extends Controller
     }
     public function delet($id){
         $user = User::find($id);
+        $admin=Admin::find($id);
         $user->delete();
+        $admin->delete();
         return redirect()->back(); 
+    }
+    public function gesPerso(){
+        $personnels = Personnel::all();
+        return view('admin.gesPerso', compact('personnels'));
     }
   
 
@@ -48,9 +56,11 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function registre(Request $request)
     {
-        //
+        $request['password'] = Hash::make($request['password']);
+        Admin::create($request->post());
+    
     }
 
     /**

@@ -88,7 +88,7 @@
             @foreach ($reclamations as $reclamation)
            
             <li>
-                <span class="reclamation" value="{{$reclamation->id}}">Réclamation :</span>{{$reclamation->message}} - Date de réclamation :   <span class="dates">{{$reclamation->created_at}}</span>, Date de réparation : <span class="dates">{{$reclamation->date_fin}}</span>
+                <span class="reclamation" value="{{$reclamation->id}}">Réclamation :</span>{{$reclamation->message}} - Date de réclamation :   <span class="dates">{{$reclamation->created_at}}</span>, Date de réparation : <span class="dates">{{$reclamation->updated_at}}</span>
             </li>
             @endforeach
             <!-- Ajoutez d'autres éléments de liste pour représenter l'historique -->

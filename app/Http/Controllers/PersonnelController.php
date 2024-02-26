@@ -6,6 +6,7 @@ use App\Models\Personnel;
 use App\Models\Reclamation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class PersonnelController extends Controller
 {
@@ -25,7 +26,8 @@ class PersonnelController extends Controller
         //
     }
     public function login(Request $request){
-        if(Auth::guard("personnel")->user()->attempt(['email' => $request->email,'password' => $request->password])){
+        if(Auth::guard("personnel")->attempt($request->only('email','password'))){
+           
             return view('personnel.personnel');
         }
             return redirect()->back()->withInput(['email' => $request->email]);
@@ -34,11 +36,11 @@ class PersonnelController extends Controller
         
         $personnels =  Personnel::all();
         $reclamations = Reclamation::all();
-        return view('personnel.personnel', compact("personnels","reclamations"));
+        return view('personnel.personnel', compact("reclamations","personnels"));
     }
+    
 
-
-    public function store (Request $request){
+   /* public function store (Request $request){
         $submitedData = $request->validate([
             'statu' => 'required|string'  
         ]);
@@ -47,7 +49,41 @@ class PersonnelController extends Controller
         $reclamation->save();
         return redirect('personnel');
 
+    }*/
+    public function reg(Request $request){
+        $request['password'] = Hash::make($request['password']);
+
+        Personnel::create($request->post());
+
+        
+        return redirect('personnel');
+
+
+        
+      
+    
     }
+   /* public function store (Request $request){
+
+        
+
+        $submitedData = $request->validate([
+            'nom' => 'required|string|max:255',
+            'prix' => 'required|numeric',
+            'categorie_id' => 'required|string'
+            
+        ]);
+
+        $product = new Produit;
+        $product -> nom = $submitedData['nom'];
+        $product -> prix = $submitedData['prix'];
+        $product -> categorie_id = $submitedData['categorie_id'];
+        $product->save();
+        return redirect('afficher');
+
+    }*/
+   
+    
 
 
     /**
@@ -69,10 +105,7 @@ class PersonnelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Personnel $personnel)
-    {
-        //
-    }
+    
 
     /**
      * Remove the specified resource from storage.

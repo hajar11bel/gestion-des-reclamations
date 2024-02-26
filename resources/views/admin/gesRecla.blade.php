@@ -97,10 +97,11 @@
                             <td>{{$item->id}}</td>
                             <td>
                                 <select class="form-select select-personnel">
-                                    <option value="" selected disabled>Sélectionner</option>
-                                    <option value="personnel1">Personnel 1</option>
-                                    <option value="personnel2">Personnel 2</option>
-                                    <!-- Ajoutez ici d'autres options pour plus de personnels -->
+                                    @foreach($personnels as $item)
+                                    
+                                    <option value="domaine">{{$item->name}}</option>
+                                    
+                                    @endforeach
                                 </select>
                             </td>
                             <td>

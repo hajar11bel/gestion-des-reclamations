@@ -77,7 +77,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+       
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf

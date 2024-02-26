@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PersonnelController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReclamationController;
 
@@ -26,10 +25,10 @@ Route::get('/logiin', function () {
 Route::get('/dashuser', function () {
     return view('user.dashuser');
 });
-
 Route::get('/reclamation', function () {
     return view('user.reclamation');
 });
+<<<<<<< HEAD
 
 Route::get('/addUser', function () {
     return view('admin.ajouterUser');
@@ -69,12 +68,26 @@ Route::get('/login-perso', function () {
     });
     
 Route::get('gesRecla', [ReclamationController::class, 'gesRecla']);
+=======
+Route::get('historique', [ReclamationController::class, 'historique']);
+Route::get('suivreReclamation', [ReclamationController::class, 'suivreReclamation']);
+Route::post('ajouterreclamation', [ReclamationController::class, 'ajouterreclamation']);
+>>>>>>> 34c8e551c1f76f7cd0046ac7e71beb31439baccc
 Route::delete('/delete/{id}', [ReclamationController::class, 'delete']);
 
-Route::get('personnel', [PersonnelController::class, 'personnel']);
-Route::post('/store', [PersonnelController::class, 'store']);
 
-Route::post('/update/{id}', [ReclamationController::class, 'update'])->name('update.reclamation');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

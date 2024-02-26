@@ -88,31 +88,33 @@
                         <tr>
                             <th scope="col">Nom</th>
                             <th scope="col">CIN</th>
-                            <th scope="col">Département</th>
+                            <th scope="col">Domaine</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($personnels as $item)
                         <tr>
-                            <td>John Doe</td>
-                            <td>1234567890</td>
-                            <td>Informatique</td>
+                            
+                            <td>{{$item ->name}}</td>
+                            <td>{{$item ->cin}}</td>
+                            <td>{{$item ->domaine->name}}</td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
                                 <a href="#" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Supprimer</a>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Jane Doe</td>
-                            <td>0987654321</td>
-                            <td>Ressources Humaines</td>
+
                             <td>
-                                <a href="#" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
-                                <a href="#" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                               
+                                <form action="/delete/{{$item->id}} " method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                  </form>
                             </td>
-                        </tr>
+                           
+                        </tr> @endforeach
+                       
                         <!-- Ajoutez ici d'autres lignes pour plus de personnel -->
                     </tbody>
                 </table>

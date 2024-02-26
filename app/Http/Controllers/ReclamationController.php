@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Personnel;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,9 +42,9 @@ class ReclamationController extends Controller
         return redirect('dashuser')->with('success', 'Votre réclamation a été enregistrée avec succès.');  
     }
     public function gesRecla(){
-        
+        $personnels = Personnel::all();
         $reclamations =  Reclamation::all();
-        return view('admin.gesRecla', compact('reclamations'));
+        return view('admin.gesRecla', compact('reclamations','personnels'));
     }
     public function delete($id){
         $reclamation = Reclamation::find($id);
@@ -51,10 +52,17 @@ class ReclamationController extends Controller
         
         return redirect()->back(); 
     }
+    public function update(Request $request, $id)
+    {
+        $reclamations = Reclamation::findOrFail($id);
+        $reclamations->statu = $request->input('statu');
+        $reclamations->save();
+        return redirect()->back()->with('success', 'Statut de réclamation mis à jour avec succès.');
+    }
+   
+   
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         //
@@ -79,13 +87,7 @@ class ReclamationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
-    {
-        $reclamation = Reclamation::findOrFail($id);
-        $reclamation->statu = $request->input('statu');
-        $reclamation->save();
-        return redirect()->back()->with('success', 'Statut de réclamation mis à jour avec succès.');
-    }
+    
 
     /**
      * Remove the specified resource from storage.
