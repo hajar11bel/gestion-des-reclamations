@@ -22,7 +22,7 @@
                 <div class="card mx-auto">
                     <div class="card-body">
                         <h5 class="card-title text-center m3">Connexion</h5>
-                        <form  method="POST" action="{{ route('login') }}">
+                        <form  method="POST" action="login">
                         @csrf
                             <div class="mb-3">
                                 <div class="form-floating">

@@ -18,4 +18,9 @@ class Domaine extends Model
     public function departement(){
         return $this->belongsTo(Departement::class);
     }
+
+
+    public function personnels(){
+        return $this->hasMany(Personnel::class);
+    }
 }
