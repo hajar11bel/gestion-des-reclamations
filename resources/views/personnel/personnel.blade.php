@@ -4,76 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réclamations Affectées - RAK</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-        .logout {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .accueil {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        li {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .reclamation {
-            font-weight: bold;
-        }
-        .etat {
-            font-style: italic;
-            color: #888;
-        }
-        select {
-            padding: 5px;
-            font-size: 16px;
-        }
-        .logout{
-            font-size: medium;
-            font-weight: bold;
-            background-color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/personnel/personnel.css') }}">
 </head>
 <body>
     <div class="header">
@@ -103,5 +34,9 @@
             @endforeach
         </ul>
     </div>
+    <footer class="footer text-center">
+          All Rights Reserved by RAK. Designed and Developed by
+          <a href="http://www.rak.ma/" target="_blank">SSI-RAK</a>.
+        </footer>
 </body>
 </html>
