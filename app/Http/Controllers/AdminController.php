@@ -62,6 +62,25 @@ class AdminController extends Controller
         Admin::create($request->post());
     
     }
+    
+    public function ajouterPerso(Request $request){
+        $request['password'] = Hash::make($request['password']);
+
+        Personnel::create($request->post());
+
+        
+        return redirect('getPerso');
+    }
+
+    public function ajouterUser(Request $request){
+        $request['password'] = Hash::make($request['password']);
+
+        User::create($request->post());
+
+        
+        return redirect('gesUsers');
+    }
+
 
     /**
      * Display the specified resource.

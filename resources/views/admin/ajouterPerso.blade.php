@@ -58,46 +58,54 @@
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h3 class="mb-5">Ajoutez un nouveau personnel</h3>
             </div>
+            <form action="/admin/ajouterPerso" method="POST">
+                @csrf
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <form>
+                       
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Nom">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nom">
                                         <label for="name">Nom </label>
                                     </div>
                                 </div>
                              
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                       <input type="texte" class="form-control" id="tel" placeholder="CIN">
+                                       <input type="texte" class="form-control" id="tel" name="cin" placeholder="CIN">
                                         <label for="tel">CIN </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="email" placeholder="">
+                                        <input type="date" class="form-control" id="email" name="date_naissance" placeholder="">
                                         <label for="date">Date naissance</label>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="">
                                         <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" name="domaine_id" id="damaine" placeholder="">
+                                        <label for="domaineID">domaine ID</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                       <input type="password" class="form-control" id="mdp" placeholder="Mot de passe">
+                                       <input type="password" class="form-control" id="mdp" name="password" placeholder="Mot de passe">
                                         <label for="tel">Mot de passe </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="mdpn" placeholder="Confirmer le mot de passe">
+                                        <input type="password" class="form-control" id="mdpn" name="password" placeholder="Confirmer le mot de passe">
                                         <label for="email">Confimrer le mot de passe </label>
                                     </div>
                                 </div>

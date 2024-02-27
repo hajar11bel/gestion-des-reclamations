@@ -23,9 +23,20 @@ Route::get('/', function () {
 Route::get('/logiin', function () {
     return view('user.login');
 });
-Route::get('/dashuser', function () {
+Route::post('/dashuser', function () {
     return view('user.dashuser');
 });
+
+Route::view('/dashuser','user.dashuser');
+
+
+
+
+
+
+
+
+
 Route::get('/reclamation', function () {
     return view('user.reclamation');
 });
@@ -35,9 +46,7 @@ Route::get('/addUser', function () {
     return view('admin.ajouterUser');
 });
 
-Route::get('/user/dashuser', function () {
-    return view('user.dashuser');
-});
+
 Route::post('ajouterreclamation', [ReclamationController::class, 'ajouterreclamation']);
 Route::get('suivreReclamation', [ReclamationController::class, 'suivreReclamation']);
  

@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ReclamationController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,8 +13,21 @@ Route::view('/admin/login','admin.login');
 Route::post('/admin/login',[AdminController::class,'login']);
 
 
+
+
+Route::view('/admin/ajouterPerso','admin.ajouterPerso');
+Route::post('/admin/ajouterPerso',[AdminController::class,'ajouterPerso']);
+
+
+Route::view('/admin/ajouterUser','admin.ajouterUser');
+Route::post('/admin/ajouterUser',[AdminController::class,'ajouterUser']);
+
+
+
 Route::view('/admin/registre','admin.register');
 Route::post('/admin/registre',[AdminController::class,'registre']);
+
+
 Route::get('gesPerso', [AdminController::class, 'gesPerso']);
 
 
@@ -29,7 +43,7 @@ Route::post('/dash', function () {
     return view('admin.dash');
 });
 
-Route::get('/logiin', function () {
+Route::get('/logn', function () {
     return view('admin.login');
     } );
 

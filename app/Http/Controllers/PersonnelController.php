@@ -28,7 +28,7 @@ class PersonnelController extends Controller
     public function login(Request $request){
         if(Auth::guard("personnel")->attempt($request->only('email','password'))){
            
-            return view('personnel.personnel');
+            return redirect('/personnel/personnel');
         }
             return redirect()->back()->withInput(['email' => $request->email]);
     }
@@ -57,11 +57,6 @@ class PersonnelController extends Controller
 
         
         return redirect('personnel');
-
-
-        
-      
-    
     }
    /* public function store (Request $request){
 
