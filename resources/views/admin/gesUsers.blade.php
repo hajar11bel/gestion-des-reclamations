@@ -10,60 +10,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css/admin/gesUsers.css') }}">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-        .logout {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .accueil {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .container {
-            
-            padding: 30px;
-        }
-        .table {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            
-            
-           
-            
-        }
-        .table th,
-        .table td {
-            vertical-align: middle;
-            text-align: center;
-            padding: 20px;
-        }
-        .table th {
-            background-color: #333;
-            color: #fff;
-        }
-        
+      
     </style>
 </head>
 <body>
@@ -80,8 +29,8 @@
             
         <a href="/addUser" class="col-3"><button class="btn btn-secondary btn-md ml-3 " >Nouveau utilisateur  <i class="fas fa-add"></i> </button></a><br>
         </div>
-        <div class="row  mt-5 ">
-            <div class="col-lg-8 ">
+        <div class="row  mt-5">
+            <div class="col-lg-8  mx-auto">
             <table class="table table-bordered table-hover  ">
                 <thead>
                     <tr>
@@ -99,14 +48,17 @@
                         <td>{{$item->cin}}</td>
                         <td>{{$item->departement_id}}</td>
                         <td class="">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+
                             <a href="" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
                             <a href="/edit/{{$item->id}}" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
                             <form action="/delet/{{$item->id}} " method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm ">Supprimer</button>
-                              </form>
+                            </form>
                         </td> 
+                    </div>
                     </tr>@endforeach
                    
                     <!-- Ajoutez ici d'autres lignes pour plus d'utilisateurs -->

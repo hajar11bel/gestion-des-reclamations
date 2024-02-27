@@ -10,62 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-        .logout {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .accueil {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .container {
-            padding: 50px;
-            width: fit-content;
-            height: max-content;
-        }
-        .table {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 1000px;
-        }
-        .table th,
-        .table td {
-            vertical-align: middle;
-            text-align: center;
-            padding: 20px;
-        }
-        .table th {
-            background-color: #333;
-            color: #fff;
-        }
-        .select-personnel {
-            width: 100%;
-            max-width: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/admin/gesReacla.css') }}">
 </head>
 <body>
     <div class="header">
