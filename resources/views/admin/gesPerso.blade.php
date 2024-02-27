@@ -101,7 +101,7 @@
                             <td>{{$item ->domaine->name}}</td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
-                                <a href="#" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
+                                <a href="/editPerso/{{$item->id}}" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
                             </td>
 
                             <td>

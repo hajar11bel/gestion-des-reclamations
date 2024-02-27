@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReclamationController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,8 +15,8 @@ Route::post('/admin/login',[AdminController::class,'login']);
 Route::view('/admin/registre','admin.register');
 Route::post('/admin/registre',[AdminController::class,'registre']);
 Route::get('gesPerso', [AdminController::class, 'gesPerso']);
-Route::delete('/delet/{id}', [AdminController::class, 'delet']);
-Route::get('/gesUsers', [AdminController::class, 'gesUsers'])->name('users.gesUsers');
+
+
 
 
 Route::get('/gesRecla', function () {
@@ -27,6 +28,30 @@ Route::view('/dash','admin.dash');
 Route::post('/dash', function () {
     return view('admin.dash');
 });
+
+Route::get('/logiin', function () {
+    return view('admin.login');
+    } );
+
+Route::get('/addPersonnel', function () {
+    return view('admin.ajouterPerso');
+});
+
+
+
+
+
+
+Route::get('/edit/{id}',  [AdminController::class, 'edit']);
+Route::put('/update/{id}',  [AdminController::class, 'updateUser']);
+Route::put('/updatePerso/{id}',  [AdminController::class, 'updatePerso']);
+
+
+Route::get('/editPerso/{id}',  [AdminController::class, 'editPerso']);
+Route::delete('/delet/{id}', [AdminController::class, 'delet']);
+Route::get('/gesUsers', [AdminController::class, 'gesUsers'])->name('users.gesUsers');
+Route::get('gesRecla', [ReclamationController::class, 'gesRecla']);
+
 
 
 

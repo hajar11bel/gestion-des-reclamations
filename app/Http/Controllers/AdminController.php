@@ -74,18 +74,52 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Admin $admin)
-    {
-        //
-    }
+    public function edit($id)
+{
+    $user = User::find($id);
+    return view('admin.updateUser')->with('user', $user);
+}
+public function editPerso($id)
+{
+    $personnel = Personnel::find($id);
+    return view('admin.updatePerso')->with('personnel', $personnel);
+}
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Admin $admin)
-    {
-        //
-    }
+
+public function updateUser(Request $request, $id)
+{
+    
+    $user = User::findOrFail($id); 
+    
+    $user->name = $request->input('name');
+    $user->cin = $request->input('cin');
+    $user->date_naissance = $request->input('date_naissance');
+    $user->email = $request->input('email');
+    
+    $user->save();
+
+    
+    return redirect()->back()->with('success', 'Utilisateur mis à jour avec succès.');
+}
+
+public function updatePerso(Request $request, $id)
+{
+    
+
+    
+    $personnel = Personnel::findOrFail($id); 
+    $personnel->name = $request->input('name');
+    $personnel->cin = $request->input('cin');
+    $personnel->date_naissance = $request->input('date_naissance');
+    $personnel->email = $request->input('email');
+    
+    
+    $personnel->save();
+
+    
+    return redirect('gesPerso')->with('success', 'Utilisateur mis à jour avec succès.');
+}
+
 
     /**
      * Remove the specified resource from storage.

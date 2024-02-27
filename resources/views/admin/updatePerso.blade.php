@@ -61,25 +61,33 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <form>
-                            <div class="row g-3">
+                    <form action="/updatePerso/{{$personnel->id}}" method="POST">
+                            @csrf
+                            @method('PUT')                     
+                                   <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Nom">
+                                        <input type="text" class="form-control" id="name" value="{{$personnel->name}}" name="name" >
                                         <label for="name">Nom </label>
                                     </div>
                                 </div>
                              
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                       <input type="tel" class="form-control" id="tel" placeholder="CIN">
+                                       <input type="tel" class="form-control" id="tel" value="{{$personnel->cin}}" name="cin" >
                                         <label for="tel">CIN </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="email" placeholder="">
-                                        <label for="email">Date naissance</label>
+                                        <input type="date" class="form-control" id="email" value="{{$personnel->date_naissance}}" name="date_naissance">
+                                        <label for="date">Date naissance</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" value="{{$personnel->email}}" name="email">
+                                        <label for="email">Email</label>
                                     </div>
                                 </div>
 

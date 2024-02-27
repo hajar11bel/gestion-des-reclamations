@@ -61,7 +61,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <form>
+                    <form action="/update/{{$user->id}}" method="POST">
+                    @csrf
+    @method('PUT')
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">

@@ -79,10 +79,7 @@ class ReclamationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Reclamation $reclamation)
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.
