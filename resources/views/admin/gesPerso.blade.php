@@ -52,7 +52,7 @@
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="#" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
                                     <a href="/editPerso/{{$item->id}}" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
-                                    <form action="/delete/{{$item->id}} " method="post">
+                                    <form action="/del/{{$item->id}} " method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-delete"></i>Delete</button>

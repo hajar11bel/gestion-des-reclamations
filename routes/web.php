@@ -30,9 +30,12 @@ Route::post('/dashuser', function () {
 Route::view('/dashuser','user.dashuser');
 
 
+//Route::get('/updateForm/{id}', [ProduitController::class, 'updateForm']);
+//Route::put('/update/{id}', [ProduitController::class, 'update']);
 
 
-
+//Route::get('/admin/updatePerso/{id}',[ReclamationController::class,'updatePers']);
+Route::put('/admin/updateP/{id}',[ReclamationController::class,'updateP']);
 
 
 

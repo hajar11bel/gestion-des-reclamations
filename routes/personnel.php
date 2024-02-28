@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\PersonnelController;
 use App\Http\Controllers\ReclamationController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,3 +25,5 @@ Route::get('/login', function () {
 Route::get('gesRecla', [ReclamationController::class, 'gesRecla']);
 
 Route::post('/update/{id}', [ReclamationController::class, 'update'])->name('update.reclamation');
+
+Route::delete('/del/{id}', [PersonnelController::class, 'del']);

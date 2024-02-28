@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Personnel;
 use App\Models\Reclamation;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -25,6 +26,13 @@ class PersonnelController extends Controller
     {
         //
     }
+
+    public function del($id){
+        $personnels = Personnel::find($id);
+        $personnels->delete();
+        
+        return redirect()->back(); 
+    }
     public function login(Request $request){
         if(Auth::guard("personnel")->attempt($request->only('email','password'))){
            
@@ -34,9 +42,9 @@ class PersonnelController extends Controller
     }
     public function personnel(){
         
-        $personnels =  Personnel::all();
-        $reclamations = Reclamation::all();
-        return view('personnel.personnel', compact("reclamations","personnels"));
+        $id=Auth::guard('personnel')->user()->id;
+        $reclamations = Reclamation::where('personnel_id',$id)->get();
+        return view('personnel.personnel', compact("reclamations"));
     }
     
 

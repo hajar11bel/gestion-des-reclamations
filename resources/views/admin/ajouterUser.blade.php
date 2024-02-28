@@ -13,7 +13,9 @@
     <div class="header">
         <a href="/gesUsers" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+        <button class="logout" style="background-color: #333;border:none">Déconnexion</button></form>
     </div>
     <div class="container-xxl py-5" id="contact">
         <div class="container py-5 px-lg-5">

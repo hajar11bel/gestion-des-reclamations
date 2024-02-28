@@ -60,6 +60,32 @@ class ReclamationController extends Controller
         return redirect()->back()->with('success', 'Statut de réclamation mis à jour avec succès.');
     }
    
+    public function updatePers(Request $request, $id){
+        dd('yes');
+        $reclamations = Reclamation::findOrFail($id);
+        $reclamations->personnel_id = $request->input('personnel_id');
+        $reclamations->save();
+        return redirect()->back()->with('success', 'Statut de réclamation mis à jour avec succès.');
+    }
+
+    
+    public function updateP(Request $query, $id){
+       // dd($id);
+        $submitedValues = $query->validate([
+           
+            'personnel_id' => 'required|string'
+            
+        ]);
+        $reclamations = Reclamation::find($id);
+        $reclamations->update([
+            
+            'personnel_id' => $submitedValues['personnel_id']
+        ]);
+        return redirect('gesRecla/')
+        ->with('success', 'Réclamation affectée avec success');
+
+    }
+
    
 
     

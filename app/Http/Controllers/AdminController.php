@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Personnel;
+use App\Models\Reclamation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ class AdminController extends Controller
     {
         //
     }
+
 
     public function login(Request $request){
    
@@ -34,15 +36,23 @@ class AdminController extends Controller
     }
     public function delet($id){
         $user = User::find($id);
-        $admin=Admin::find($id);
+       
         $user->delete();
-        $admin->delete();
+      
         return redirect()->back(); 
     }
+
+    
+
     public function gesPerso(){
         $personnels = Personnel::all();
-        return view('admin.gesPerso', compact('personnels'));
+
+
+       return view('admin.gesPerso', compact('personnels'));
+
     }
+
+    
   
 
     /**

@@ -33,6 +33,9 @@ Route::get('gesPerso', [AdminController::class, 'gesPerso']);
 
 
 
+
+
+
 Route::get('/gesRecla', function () {
     return view('admin.gesRecla');
 });
@@ -51,14 +54,11 @@ Route::get('/addPersonnel', function () {
     return view('admin.ajouterPerso');
 });
 
-
-
-
-
-
 Route::get('/edit/{id}',  [AdminController::class, 'edit']);
 Route::put('/update/{id}',  [AdminController::class, 'updateUser']);
 Route::put('/updatePerso/{id}',  [AdminController::class, 'updatePerso']);
+
+
 
 
 Route::get('/editPerso/{id}',  [AdminController::class, 'editPerso']);
