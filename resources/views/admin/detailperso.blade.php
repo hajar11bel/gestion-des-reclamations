@@ -11,37 +11,40 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+        <a href="/gesPerso" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <a href="#" class="logout">Déconnexion</a>
+        <form action="/admin/logout " method="POST">
+            @csrf
+        <button class="logout" style="background-color: #333; border:none;">Déconnexion</button></form>
+    </div>
     </div>
     <div class="container-xxl py-5" id="contact">
         <div class="container py-5 px-lg-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h3 class="mb-5">nom </h3>
+                <h3 class="mb-5">{{$personnel->name}} </h3>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-9">
                     <div class="wow fadeInUp" data-wow-delay="0.3s">
-                        <form>
+                        <form action="/detailperso/{id}">
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Nom" disabled>
+                                        <input type="text" class="form-control" id="name" placeholder="Nom" disabled value="{{$personnel->name}}">
                                         <label for="name">Nom </label>
                                     </div>
                                 </div>
                              
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                       <input type="tel" class="form-control" id="tel" placeholder="CIN" disabled>
+                                       <input type="tel" class="form-control" id="tel" placeholder="CIN" disabled value="{{$personnel->cin}}">
                                         <label for="tel">CIN </label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="email" placeholder="" disabled>
-                                        <label for="email">Date naissance</label>
+                                        <input type="date" class="form-control" id="date" placeholder="" disabled value="{{$personnel->date_naissance}}">>
+                                        <label for="date">Date naissance</label>
                                     </div>
                                 </div>
 

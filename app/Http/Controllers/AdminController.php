@@ -20,7 +20,7 @@ class AdminController extends Controller
         //
     }
 
-
+   
     public function login(Request $request){
    
         if(Auth::guard("admin")->attempt($request->only('email','password'))){
@@ -28,6 +28,25 @@ class AdminController extends Controller
         }
             return redirect()->back()->withInput(['email' => $request->email]);
     }
+
+    public function logoutt(){
+        
+        Auth::guard("admin")->logout();
+            return view('admin.login');
+        
+    }
+
+    public function detail($id){ 
+            $user = User::find($id);
+           
+            return view('admin/detailuser' ,compact('user')); 
+    }
+
+    public function detailP($id){ 
+        $personnel = Personnel::find($id);
+       
+        return view('admin/detailperso' ,compact('personnel')); 
+}
   
     
     public function gesUsers(){

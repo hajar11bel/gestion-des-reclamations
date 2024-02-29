@@ -19,7 +19,7 @@
     <div class="header">
         <a href="dash" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="/admin/logout" method="POST">
             @csrf
         <button class="logout" style="background-color: #333; border:none;">Déconnexion</button></form>
     </div>
@@ -50,7 +50,7 @@
                         <td class="">
                         <div class="btn-group" role="group" aria-label="Basic example">
 
-                            <a href="" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
+                            <a href="admin/detailuser/{{$item->id}}" class="btn btn-primary btn-sm me-2"><i class="fas fa-info-circle"></i> Détail</a>
                             <a href="/edit/{{$item->id}}" class="btn btn-warning btn-sm me-2"><i class="fas fa-edit"></i> Modifier</a>
                             <form action="/delet/{{$item->id}} " method="post">
                                 @csrf

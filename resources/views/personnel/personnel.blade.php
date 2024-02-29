@@ -10,7 +10,7 @@
     <div class="header">
        
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="/personnel/logout" method="POST">
             @csrf
             <button class="logout">Déconnexion</button>
         </form>
@@ -25,7 +25,7 @@
                     @csrf
                     <select name="statu">
                         <option value="en attente" {{$reclamation->statu == 'en attente' ? 'selected' : ''}}>En attente</option>
-                        <option value="en traitement" {{$reclamation->statu == 'en traitement' ? 'selected' : ''}}>En traitement</option>
+                       
                         <option value="termine" {{$reclamation->statu == 'termine' ? 'selected' : ''}}>Terminé</option>
                     </select>
                     <input type="submit" value="Mettre à jour">

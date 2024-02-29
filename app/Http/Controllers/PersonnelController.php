@@ -46,7 +46,11 @@ class PersonnelController extends Controller
         $reclamations = Reclamation::where('personnel_id',$id)->get();
         return view('personnel.personnel', compact("reclamations"));
     }
-    
+    public function logout(){
+        
+       Auth::guard('personnel')->logout();
+       return view('personnel.login');
+    }
 
    /* public function store (Request $request){
         $submitedData = $request->validate([

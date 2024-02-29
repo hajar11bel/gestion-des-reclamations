@@ -13,7 +13,7 @@
     <div class="header">
         <a href="/gesUsers" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="/admin/logout" method="POST">
             @csrf
         <button class="logout" style="background-color: #333;border:none">Déconnexion</button></form>
     </div>
@@ -30,7 +30,7 @@
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nom">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Nom" >
                                         <label for="name">Nom </label>
                                     </div>
                                 </div>

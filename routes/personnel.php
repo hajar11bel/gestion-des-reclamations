@@ -27,3 +27,5 @@ Route::get('gesRecla', [ReclamationController::class, 'gesRecla']);
 Route::post('/update/{id}', [ReclamationController::class, 'update'])->name('update.reclamation');
 
 Route::delete('/del/{id}', [PersonnelController::class, 'del']);
+
+Route::post('/personnel/logout', [PersonnelController::class, 'logout']);

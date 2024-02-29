@@ -14,7 +14,7 @@
         <a href="/gesPerso" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
 
-         <form action="{{ route('logout') }}" method="POST">
+         <form action="/admin/logout" method="POST">
                 @csrf
             <button class="logout" style="background-color: #333;border:none">Déconnexion</button></form>
     </div>
