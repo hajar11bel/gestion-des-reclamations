@@ -43,7 +43,7 @@ class PersonnelController extends Controller
     public function personnel(){
         
         $id=Auth::guard('personnel')->user()->id;
-        $reclamations = Reclamation::where('personnel_id',$id)->get();
+        $reclamations = Reclamation::where('personnel_id',$id)->where('statu','!=','termine')->get();
         return view('personnel.personnel', compact("reclamations"));
     }
     public function logout(){

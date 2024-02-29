@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-    Route::get('/personnel/personnel', [PersonnelController::class, 'personnel']);
+Route::get('/personnel/personnel', [PersonnelController::class, 'personnel']);
 
 Route::view('/personnel/login','personnel.login');
 Route::post('/personnel/login',[PersonnelController::class,'login']);

@@ -56,7 +56,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" name="departement_id" id="departement" placeholder="">
+                                        <input type="number" max="1" class="form-control" name="departement_id" id="departement" placeholder="">
                                         <label for="emadepartement_id">departement Id</label>
                                     </div>
                                 </div>

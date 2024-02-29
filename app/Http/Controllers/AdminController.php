@@ -98,7 +98,7 @@ class AdminController extends Controller
         Personnel::create($request->post());
 
         
-        return redirect('getPerso');
+        return redirect('gesPerso');
     }
 
     public function ajouterUser(Request $request){

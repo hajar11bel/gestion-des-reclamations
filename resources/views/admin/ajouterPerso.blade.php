@@ -13,10 +13,9 @@
     <div class="header">
         <a href="/gesPerso" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
-
-         <form action="/admin/logout" method="POST">
-                @csrf
-            <button class="logout" style="background-color: #333;border:none">Déconnexion</button></form>
+        <form action="/admin/logout" method="POST">
+              @csrf
+        <button class="logout" style="background-color: #333;border:none">Déconnexion</button></form>
     </div>
     <div class="container-xxl py-5" id="contact">
         <div class="container py-5 px-lg-5">
@@ -57,7 +56,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" name="domaine_id" id="damaine" placeholder="">
+                                        <input type="number" max="2" class="form-control" name="domaine_id" id="damaine" placeholder="">
                                         <label for="domaineID">domaine ID</label>
                                     </div>
                                 </div>

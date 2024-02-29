@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.html" class="accueil">Accueil</a>
+        <a href="/gesPerso" class="accueil">Accueil</a>
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="/admin/logout" method="POST">
             @csrf
