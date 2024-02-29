@@ -43,8 +43,21 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="date" class="form-control" id="date" placeholder="" disabled value="{{$personnel->date_naissance}}">>
+                                        <input type="date" class="form-control" id="date" placeholder="" disabled value="{{$personnel->date_naissance}}">
                                         <label for="date">Date naissance</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="" disabled value="{{$personnel->email}}">
+                                        <label for="email">email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="domaine" placeholder="" disabled value="{{$personnel->domaine_id}}">
+                                        <label for="domaine">Domaine ID</label>
                                     </div>
                                 </div>
 
