@@ -12,7 +12,7 @@
         <img class="logo" src="logo_rak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-        <button class="logout">Déconnexion</button>
+        <button class="logout" style="border: none;">Déconnexion</button>
     </div>
     <div class="container">
         <h2>Historique des Réclamations</h2>

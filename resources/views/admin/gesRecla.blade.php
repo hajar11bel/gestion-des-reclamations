@@ -55,7 +55,10 @@
                                     @csrf
                                     @method('PUT')
 
-git                                     <select class="form-select select-personnel" name="personnel_id">
+
+
+                                    <select class="form-select select-personnel" name="personnel_id">
+
                                         @foreach($personnels as $personnel)
                                         <option value="{{$personnel->id}}" {{$item->personnel_id == $personnel->id ? 'selected' : ''}}>
                                             {{$personnel->name}}
@@ -66,7 +69,7 @@ git                                     <select class="form-select select-person
 
 
 
-                                    <button type="submit">affecter</button>
+                                    <button type="submit" class="btn btn-success mt-3">affecter</button>
                             </td>
                             </form>
                             <td>

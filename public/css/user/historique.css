@@ -28,6 +28,7 @@ body {
     background-color: #333;
     color: #fff;
     border: none;
+    text-decoration: none;
 }
 .container {
     max-width: 800px;
@@ -63,5 +64,6 @@ li {
 .logout, .accueil{
     font-size: medium;
     font-weight: bold;
-    background-color: black;
+    background-color: #333;
+   
 }
