@@ -89,7 +89,10 @@
             </div>
         </div>
     </div>
-
+    <footer class="footer text-center">
+          All Rights Reserved by RAK. Designed and Developed by
+          <a href="http://www.rak.ma/" target="_blank">SSI-RAK</a>.
+        </footer>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Pd3mBPJL8wpp6kpxa+CFVWuSTQxZ7Bg/z7szcv0EpV5yYxGY1GaqnMLc3mT9h8hK" crossorigin="anonymous"></script>

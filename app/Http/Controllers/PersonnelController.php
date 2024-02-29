@@ -62,14 +62,14 @@ class PersonnelController extends Controller
         return redirect('personnel');
 
     }*/
-    public function reg(Request $request){
+   /* public function reg(Request $request){
         $request['password'] = Hash::make($request['password']);
 
         Personnel::create($request->post());
 
         
         return redirect('personnel');
-    }
+    }*/
    /* public function store (Request $request){
 
         

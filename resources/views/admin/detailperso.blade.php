@@ -48,6 +48,19 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="" disabled value="{{$personnel->email}}">
+                                        <label for="email">email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="domaine" placeholder="" disabled value="{{$personnel->domaine_id}}">
+                                        <label for="domaine">Domaine ID</label>
+                                    </div>
+                                </div>
+
                                 
                                 
                                 
@@ -64,6 +77,9 @@
             </div>
         </div>
     </div>
-
+    <footer class="footer text-center">
+          All Rights Reserved by RAK. Designed and Developed by
+          <a href="http://www.rak.ma/" target="_blank">SSI-RAK</a>.
+        </footer>
 </body>
 </html>

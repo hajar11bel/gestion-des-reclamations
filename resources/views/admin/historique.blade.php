@@ -26,5 +26,9 @@
             <!-- Ajoutez d'autres éléments de liste pour représenter l'historique -->
         </ul></form>
     </div>
+    <footer class="footer text-center">
+          All Rights Reserved by RAK. Designed and Developed by
+          <a href="http://www.rak.ma/" target="_blank">SSI-RAK</a>.
+        </footer>
 </body>
 </html>

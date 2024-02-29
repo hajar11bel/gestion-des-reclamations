@@ -90,6 +90,10 @@
             </div>
         </div>
     </div>
+    <footer class="footer text-center">
+          All Rights Reserved by RAK. Designed and Developed by
+          <a href="http://www.rak.ma/" target="_blank">SSI-RAK</a>.
+        </footer>
 <script>
     function validmdp(event) {
       event.preventDefault(); 
