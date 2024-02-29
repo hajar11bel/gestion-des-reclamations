@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-12  loginBox">
-                <img class="user" src="assets/user.png" alt="User Image">
+                <img class="user" src="{{asset('assets/user.png')}}" alt="User Image">
                 <div class="card mx-auto">
                     <div class="card-body">
                         <h5 class="card-title text-center m3">Connexion</h5>
@@ -73,10 +73,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer text-center">
-          All Rights Reserved by RAK. Designed and Developed by
-          <a href="http://www.rak.ma/" target="_blank">SSI-RAK</a>.
-        </footer>
+    
 </body>
 
 </html>
