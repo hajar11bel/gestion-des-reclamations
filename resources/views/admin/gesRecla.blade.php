@@ -30,7 +30,7 @@
         @if($msg = Session::get('success'))
         <div class="alert alert-success" role="alert">
             {{$msg}}
-          </div>
+        </div>
         @endif
 
         <div class="row mt-5">
@@ -54,20 +54,21 @@
                                 <form action="/admin/updateP/{{$item->id}}   " method="POST">
                                     @csrf
                                     @method('PUT')
-                                        
-                                    <select class="form-select select-personnel" name="personnel_id" value="{{ $item->personnel_id }}">
+
+git                                     <select class="form-select select-personnel" name="personnel_id">
                                         @foreach($personnels as $personnel)
-
-                                        <option value="{{$personnel->id}}" {{$item->personnel_id == $personnel->name ? 'selected' : ''}}>{{$personnel->name}}</option>
-
+                                        <option value="{{$personnel->id}}" {{$item->personnel_id == $personnel->id ? 'selected' : ''}}>
+                                            {{$personnel->name}}
+                                        </option>
                                         @endforeach
                                     </select>
-                                    
-                                   
-                                        
+
+
+
+
                                     <button type="submit">affecter</button>
                             </td>
-</form>
+                            </form>
                             <td>
 
                                 <form action="/delete/{{$item->id}} " method="post">
