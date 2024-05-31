@@ -60,8 +60,8 @@
                                     <select class="form-select select-personnel" name="personnel_id">
 
                                         @foreach($personnels as $personnel)
-                                        <option value="{{$personnel->id}}" {{$item->personnel_id == $personnel->id ? 'selected' : ''}}>
-                                            {{$personnel->name}}
+                                                                           <option value="{{$personnel->id}}" {{$item->personnel_id == $personnel->id ? 'selected' : ''}}>
+         {{$personnel->name}}
                                         </option>
                                         @endforeach
                                     </select>

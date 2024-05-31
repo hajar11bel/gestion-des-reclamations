@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="header">
-        <img class="logo" src="logo_rak.png" alt="Logo RAK">
+        <img class="logo" src="logorak.png" alt="Logo RAK">
         <form action="{{ route('logout') }}" method="POST">
             @csrf
         <button class="logout">Déconnexion</button></form>
